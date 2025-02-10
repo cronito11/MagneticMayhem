@@ -121,8 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25085b4a10ba3fc4496cf0a23222b0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensity: 10
-  _pole: 0
+  currentStatus:
+    pole: 1
+    actionRadio: 5
+    instensity: 10
+  <actionRadio>k__BackingField: 5
 --- !u!1 &5157994472745313200
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +185,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2158808760872683522}
@@ -232,7 +235,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.03137255}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -253,6 +256,7 @@ GameObject:
   - component: {fileID: 2158808760872683522}
   - component: {fileID: 7101829410994709129}
   - component: {fileID: 2922940733933098583}
+  - component: {fileID: 5211936532190079783}
   m_Layer: 0
   m_Name: AreaEffect
   m_TagString: Untagged
@@ -324,6 +328,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7582a43a7d33f04dbfc0259a5a3f95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poleFieldArea: {fileID: 7101829410994709129}
+--- !u!114 &5211936532190079783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979176682183970053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406f6d898428aaa49a223f832df96ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualArea: {fileID: 2197706274301263322}
 --- !u!1 &8439002310317249235
 GameObject:
   m_ObjectHideFlags: 0

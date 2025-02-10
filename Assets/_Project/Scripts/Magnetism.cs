@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 namespace MagneticMayhem
@@ -8,28 +7,46 @@ namespace MagneticMayhem
 
     public class Magnetism : MonoBehaviour, IMagneticRecieve, IMagneticApply
     {
+        private Action<MagnetStatus> OnStatusChanged;
+        
         //Check formula
         private const float MAGNETIC_CONSTANT = 1.0e-7f;
         //Add comment
-        [SerializeField] private float intensity;
-        [SerializeField] private MagenticPole _pole;
+        [SerializeField] private MagnetStatus currentStatus;
+
 
         private Dictionary<IMagneticRecieve, Transform> magnetsArround = new Dictionary<IMagneticRecieve, Transform>();
         private Rigidbody2D rb;
 
-        public MagenticPole pole => _pole;
+        [field: SerializeField] public float actionRadio { get; private set; } = 5;
 
+        public MagenticPole pole => currentStatus.pole;
+
+        #region TestCases
+#if UNITY_EDITOR
+        private void OnValidate ()
+        {
+            UpdateMagnetStatus(currentStatus);
+        }
+#endif
+    #endregion
         private void Awake ()
         {
             rb = GetComponent<Rigidbody2D>();
         }
 
-        public void ApplyMagenist ()
+        public void ApplyMagenism ()
         {
             foreach (var magnet in magnetsArround)
             {
                 CalculateMagenticForce(magnet.Value, magnet.Key);
             }
+        }
+
+        private void UpdateMagnetStatus (MagnetStatus newStatus)
+        { 
+            currentStatus = newStatus;
+            OnStatusChanged?.Invoke(currentStatus);
         }
 
         private void CalculateMagenticForce (Transform target,  IMagneticRecieve magnet)
@@ -41,14 +58,14 @@ namespace MagneticMayhem
             distance.x = (float) Math.Round(distance.x,2);
             distance.y = (float) Math.Round(distance.y,2);
 
-            float magneticForce = (intensity) / (distance.sqrMagnitude);
-            magnet.TakenMagneticForce(distance.normalized, magneticForce * (pole.Equals(magnet.pole) ? -1 : 1));
+            float magneticForce = currentStatus.instensity / (distance.sqrMagnitude);
+            magnet.TakenMagneticForce(distance.normalized, magneticForce, currentStatus.pole );
         }
 
-        public void TakenMagneticForce (Vector2 direction, float magnitude)
+        public void TakenMagneticForce (Vector2 direction, float magnitude, MagenticPole pole)
         {
+            magnitude *= pole.Equals(currentStatus.pole) ? -1 : 1;
             rb.AddForce(direction * magnitude);
-            Debug.Log(rb.linearVelocity);
         }
 
         public void AddMagnet (IMagneticRecieve magnet)
@@ -69,7 +86,18 @@ namespace MagneticMayhem
         {
             if (magnetsArround.Count == 0)
                 return;
-            ApplyMagenist();
+            ApplyMagenism();
+        }
+
+        public void SuscribeListener (Action<MagnetStatus> method)
+        {
+            OnStatusChanged += method;
+            method.Invoke(currentStatus);
+        }
+
+        public void RemoveListener (Action<MagnetStatus> method)
+        {
+           OnStatusChanged -= method;
         }
     }
 }
