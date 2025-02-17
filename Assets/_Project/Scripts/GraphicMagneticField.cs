@@ -25,7 +25,7 @@ namespace MagneticMayhem
 
         private void OnStatusChanged (MagnetStatus status)
         {
-            visualArea.localScale = Vector3.one * status.actionRadio;
+            visualArea.localScale = Vector3.one * status.rangeOfMegneticField * 2;
         }
     }
 }

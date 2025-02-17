@@ -7,9 +7,8 @@ namespace MagneticMayhem
     public struct MagnetStatus
     {
         public MagenticPole pole;
-        public float actionRadio;
-        public float instensity;
-
+        public float rangeOfMegneticField;
+        public float poleIntensity;
     }
 
     public enum MagenticPole
@@ -20,7 +19,7 @@ namespace MagneticMayhem
     }
     public interface IMagneticApply
     {
-        void ApplyMagenism ();
+        void ApplyMagnetism ();
         void AddMagnet (IMagneticRecieve magnet);
         void RemoveMagnet (IMagneticRecieve magnet);
 
@@ -31,6 +30,6 @@ namespace MagneticMayhem
     public interface IMagneticRecieve
     {
         MagenticPole pole { get; }
-        void TakenMagneticForce (Vector2 direction, float magnitude, MagenticPole pole);
+        void ReceivMagnetism (Vector2 direction, float magnitude, MagenticPole pole);
     }
 }

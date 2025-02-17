@@ -35,7 +35,7 @@ namespace MagneticMayhem
             rb = GetComponent<Rigidbody2D>();
         }
 
-        public void ApplyMagenism ()
+        public void ApplyMagnetism ()
         {
             foreach (var magnet in magnetsArround)
             {
@@ -58,11 +58,11 @@ namespace MagneticMayhem
             distance.x = (float) Math.Round(distance.x,2);
             distance.y = (float) Math.Round(distance.y,2);
 
-            float magneticForce = currentStatus.instensity / (distance.sqrMagnitude);
-            magnet.TakenMagneticForce(distance.normalized, magneticForce, currentStatus.pole );
+            float magneticForce = currentStatus.poleIntensity / (distance.sqrMagnitude);
+            magnet.ReceivMagnetism(distance.normalized, magneticForce, currentStatus.pole );
         }
 
-        public void TakenMagneticForce (Vector2 direction, float magnitude, MagenticPole pole)
+        public void ReceivMagnetism (Vector2 direction, float magnitude, MagenticPole pole)
         {
             magnitude *= pole.Equals(currentStatus.pole) ? -1 : 1;
             rb.AddForce(direction * magnitude);
@@ -86,7 +86,7 @@ namespace MagneticMayhem
         {
             if (magnetsArround.Count == 0)
                 return;
-            ApplyMagenism();
+            ApplyMagnetism();
         }
 
         public void SuscribeListener (Action<MagnetStatus> method)

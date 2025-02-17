@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6063516864323204235}
   - component: {fileID: 2650652863181160714}
   - component: {fileID: 364197077894901574}
+  - component: {fileID: 1182624540064752387}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -123,9 +124,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStatus:
     pole: 1
-    actionRadio: 5
-    instensity: 10
+    rangeOfMegneticField: 2.5
+    poleIntensity: 0
   <actionRadio>k__BackingField: 5
+--- !u!114 &1182624540064752387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444960827763416982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103cab31187559241a4c37f5b0f5f8c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  groundCheck: 0
+  input: {fileID: 11400000, guid: 35408e7106578c3488a72dccc4166998, type: 2}
 --- !u!1 &5157994472745313200
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +185,7 @@ GameObject:
   - component: {fileID: 2197706274301263322}
   - component: {fileID: 5524795841774318516}
   m_Layer: 0
-  m_Name: AreaEffect
+  m_Name: AreaEffectVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,7 +201,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2158808760872683522}
@@ -275,7 +291,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2197706274301263322}
   m_Father: {fileID: 7936241757994717088}
@@ -328,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7582a43a7d33f04dbfc0259a5a3f95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poleFieldArea: {fileID: 7101829410994709129}
+  magneticFieldArea: {fileID: 7101829410994709129}
 --- !u!114 &5211936532190079783
 MonoBehaviour:
   m_ObjectHideFlags: 0

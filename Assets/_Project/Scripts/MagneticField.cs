@@ -5,38 +5,38 @@ namespace MagneticMayhem
 {
     public class MagneticField : MonoBehaviour
     {
-        [SerializeField] private CircleCollider2D poleFieldArea;
-        private IMagneticApply mageneticManager;
+        [SerializeField] private CircleCollider2D magneticFieldArea;
+        private IMagneticApply magneticManager;
 
 
         private void Awake ()
         {
-            mageneticManager = GetComponentInParent<IMagneticApply>();
-            mageneticManager.SuscribeListener( OnStatusChanged);
+            magneticManager = GetComponentInParent<IMagneticApply>();
+            magneticManager.SuscribeListener( OnStatusChanged);
         }
 
         private void OnDestroy ()
         {
-            mageneticManager.RemoveListener(OnStatusChanged);
+            magneticManager.RemoveListener(OnStatusChanged);
         }
 
         private void OnStatusChanged (MagnetStatus status)
         {
-            poleFieldArea.radius = status.actionRadio;
+            magneticFieldArea.radius = status.rangeOfMegneticField;
         }
 
         private void OnTriggerEnter2D (Collider2D collision)
         {
             if (!collision.gameObject.TryGetComponent<IMagneticRecieve>(out var magent))
                 return;
-            mageneticManager.AddMagnet(magent);
+            magneticManager.AddMagnet(magent);
         }
 
         private void OnTriggerExit2D (Collider2D collision)
         {
             if (!collision.gameObject.TryGetComponent<IMagneticRecieve>(out var magent))
                 return;
-            mageneticManager.RemoveMagnet(magent);
+            magneticManager.RemoveMagnet(magent);
         }
     }
 }
