@@ -1,59 +1,29 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using static InputSystem_Actions;
 
 namespace MagneticMayhem
 {
-    [CreateAssetMenu(fileName = "InputReader", menuName = "Scriptable Objects/InputReader")]
-    public class InputReader : ScriptableObject, IPlayerActions
+    //[CreateAssetMenu(fileName = "InputReader", menuName = "Scriptable Objects/InputReader")]
+    public abstract class InputReader : ScriptableObject
     {
         public event UnityAction<Vector2> Move = delegate {};
+        protected InputSystem_Actions input;
 
-        InputSystem_Actions input;
-
-        private void OnEnable()
+        private void OnEnable ()
         {
-            if (input == null)
-            {
-                input = new InputSystem_Actions();
-                input.Player.SetCallbacks(this);
-            }
+            InitializeInput();
         }
 
-        public void EnablePlayerActions()
-        {
-            input.Player.Enable();
-        }   
+        protected abstract void InitializeInput ();
 
-        public void OnAttack(InputAction.CallbackContext context)
-        {
-            
-        }
+        public abstract void EnablePlayerActions ();
 
-        public void OnCrouch(InputAction.CallbackContext context)
-        {
-            
-        }
+        public abstract void DisablePlayerActions ();
 
-        public void OnInteract(InputAction.CallbackContext context)
+        public void OnMove (InputAction.CallbackContext context)
         {
-            
-        }
-
-        public void OnJump(InputAction.CallbackContext context)
-        {
-            
-        }
-
-        public void OnLook(InputAction.CallbackContext context)
-        {
-            
-        }
-
-        public void OnMove(InputAction.CallbackContext context)
-        {
-            switch(context.phase)
+            switch (context.phase)
             {
                 case InputActionPhase.Performed:
                 case InputActionPhase.Canceled:
@@ -61,22 +31,51 @@ namespace MagneticMayhem
                     Move?.Invoke(context.ReadValue<Vector2>());
                     break;
             }
-            
+
+            InitializeInput();
         }
 
-        public void OnNext(InputAction.CallbackContext context)
+
+
+
+        public void OnAttack (InputAction.CallbackContext context)
         {
-            
+
         }
 
-        public void OnPrevious(InputAction.CallbackContext context)
+        public void OnCrouch (InputAction.CallbackContext context)
         {
-           
+
         }
 
-        public void OnSprint(InputAction.CallbackContext context)
+        public void OnInteract (InputAction.CallbackContext context)
         {
-            
+
+        }
+
+        public void OnJump (InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnLook (InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnNext (InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnPrevious (InputAction.CallbackContext context)
+        {
+
+        }
+
+        public void OnSprint (InputAction.CallbackContext context)
+        {
+
         }
     }
 }

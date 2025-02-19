@@ -44,18 +44,12 @@ namespace MagneticMayhem
             input.Move -= GetMovement;
         }
 
-        private void TakeInput()
-        {
-            //take input from player
-            horizontal = Input.GetAxis("Horizontal");
-        }
-
         private void GetMovement(Vector2 move)
         {
             movement.x = move.x;
             movement.y = move.y;    
             //move player
-            Debug.Log(move);  
+            Debug.Log(move, gameObject);  
         }
 
         private void UpdateMovement()
