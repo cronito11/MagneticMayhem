@@ -17,6 +17,16 @@ namespace MagneticMayhem
         positive = 1,
         negative = 2
     }
+
+    public interface IMageneticPoleChangeable
+    {
+        void Switch ();
+        void ChangePole (MagenticPole pole);
+
+        void SuscribeListener (Action<MagnetStatus> method);
+        void RemoveListener (Action<MagnetStatus> method);
+    }
+
     public interface IMagneticApply
     {
         void ApplyMagnetism ();

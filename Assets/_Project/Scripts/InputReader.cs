@@ -8,6 +8,8 @@ namespace MagneticMayhem
     public abstract class InputReader : ScriptableObject
     {
         public event UnityAction<Vector2> Move = delegate {};
+        public event UnityAction Interact = delegate {};
+
         protected InputSystem_Actions input;
 
         private void OnEnable ()
@@ -50,7 +52,14 @@ namespace MagneticMayhem
 
         public void OnInteract (InputAction.CallbackContext context)
         {
+            switch (context.phase)
+            {
+                case InputActionPhase.Started:
+                    Interact?.Invoke();
+                    break;
+            }
 
+            InitializeInput();
         }
 
         public void OnJump (InputAction.CallbackContext context)

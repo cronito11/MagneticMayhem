@@ -13,13 +13,12 @@ namespace MagneticMayhem
         
         [SerializeField] private InputReader input;
 
-        private float horizontal;
         private Vector3 movement;
+        private IMageneticPoleChangeable switchPolarity;
 
         void Awake()
         {
-            
-            
+            switchPolarity = GetComponent<IMageneticPoleChangeable>();
         }
 
         private void Start()
@@ -29,7 +28,8 @@ namespace MagneticMayhem
 
         private void OnEnable()
         {
-            input.Move += GetMovement; 
+            input.Move += GetMovement;
+            input.Interact += GetInteraction;
         }
 
         // Update is called once per frame
@@ -42,6 +42,12 @@ namespace MagneticMayhem
         private void OnDisable()
         {
             input.Move -= GetMovement;
+            input.Interact -= GetInteraction;
+        }
+
+        private void GetInteraction ()
+        {
+            switchPolarity.Switch();
         }
 
         private void GetMovement(Vector2 move)

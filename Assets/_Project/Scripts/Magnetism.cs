@@ -5,7 +5,7 @@ using UnityEngine;
 namespace MagneticMayhem
 {
 
-    public class Magnetism : MonoBehaviour, IMagneticRecieve, IMagneticApply
+    public class Magnetism : MonoBehaviour, IMagneticRecieve, IMagneticApply, IMageneticPoleChangeable
     {
         private Action<MagnetStatus> OnStatusChanged;
         
@@ -54,7 +54,7 @@ namespace MagneticMayhem
             if (magnet.pole.Equals(MagenticPole.None))
                 return;
 
-            Vector2 distance = new Vector2(Mathf.Floor( transform.position.x),Mathf.Floor( transform.position.y)) - new Vector2(Mathf.Floor( target.position.x),Mathf.Floor( target.position.y));//  transform.position - target.position;
+            Vector2 distance = new Vector2(Mathf.Floor( transform.position.x),Mathf.Floor( transform.position.y)) - new Vector2(Mathf.Floor( target.position.x),Mathf.Floor( target.position.y));
             distance.x = (float) Math.Round(distance.x,2);
             distance.y = (float) Math.Round(distance.y,2);
 
@@ -98,6 +98,20 @@ namespace MagneticMayhem
         public void RemoveListener (Action<MagnetStatus> method)
         {
            OnStatusChanged -= method;
+        }
+
+        public void Switch ()
+        {
+            if (pole.Equals(MagenticPole.positive))
+                ChangePole(MagenticPole.negative);
+            else
+                ChangePole(MagenticPole.positive);
+        }
+
+        public void ChangePole (MagenticPole pole)
+        {
+            this.currentStatus.pole = pole;
+            OnStatusChanged?.Invoke(currentStatus);
         }
     }
 }
