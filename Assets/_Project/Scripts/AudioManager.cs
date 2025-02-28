@@ -8,13 +8,13 @@ namespace MagneticMayhem
     public class AudioManager : MonoBehaviour
     {
         #region constants
-        private const string MASTER_VOLUME = "MasterVolume";
+        private const string MASTER_VOLUME = "Master";
         #endregion
         public Action<AudioSettings> OnAudioChange;
 
         private AudioSettings _settings;
 
-        public AudioSettings settings => settings;
+        public AudioSettings settings => _settings;
 
 
         [SerializeField] private AudioMixer audioMixer;
