@@ -18,7 +18,7 @@ namespace MagneticMayhem
         private Dictionary<IMagneticRecieve, Transform> magnetsArround = new Dictionary<IMagneticRecieve, Transform>();
         private Rigidbody2D rb;
 
-        [field: SerializeField] public float actionRadio { get; private set; } = 5;
+        //[field: SerializeField] public float actionRadio { get; private set; } = 5;
 
         public MagenticPole pole => currentStatus.pole;
 
