@@ -8,12 +8,14 @@ namespace MagneticMayhem
     {
         private Action<MagnetStatus> OnStatusChanged;
 
-        //Check formula
+        //Magntic constant is a constant value that is used to calculate the force between two magnetic poles but it is not used in this script
         private const float MAGNETIC_CONSTANT = 1.0e-7f;
-        //Add comment
+        
+        //a reference of transform where distnce will be calculated because if the transform is too close with player it would give 0 distance and force will be infinite
+        [SerializeField] private Transform distanceAnchor; 
+        
         [SerializeField] private MagnetStatus currentStatus;
-        [SerializeField] private Transform areaOfEffect;
-
+        
         private Dictionary<IMagneticRecieve, Transform> magnetsArround = new Dictionary<IMagneticRecieve, Transform>();
        
 
@@ -37,10 +39,10 @@ namespace MagneticMayhem
             if (magnet.pole.Equals(MagenticPole.None))
                 return;
 
-            float distance = Mathf.Abs(Mathf.Floor(areaOfEffect.position.y) - Mathf.Floor(target.position.y));
+            float distance = Mathf.Abs(Mathf.Floor(distanceAnchor.position.y) - Mathf.Floor(target.position.y));
 
             float magneticForce = currentStatus.poleIntensity / (distance * distance);
-            Vector2 direction = Vector2.up * Mathf.Sign(areaOfEffect.position.y - target.position.y);
+            Vector2 direction = Vector2.up * Mathf.Sign(distanceAnchor.position.y - target.position.y);
             magnet.ReceivMagnetism(direction, magneticForce, currentStatus.pole);
         }
        

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5543172556257604128}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +127,6 @@ MonoBehaviour:
     pole: 1
     rangeOfMegneticField: 2.5
     poleIntensity: 0
-  <actionRadio>k__BackingField: 5
 --- !u!114 &1182624540064752387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +142,7 @@ MonoBehaviour:
   moveSpeed: 5
   groundCheck: 0
   input: {fileID: 11400000, guid: 35408e7106578c3488a72dccc4166998, type: 2}
+  <playerIdentifier>k__BackingField: 0
 --- !u!114 &5543172556257604128
 MonoBehaviour:
   m_ObjectHideFlags: 0
