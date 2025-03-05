@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 
+public enum Player { playerOne = 0, playerTwo = 1}; //This is a enum that is used to identify the player
+
 namespace MagneticMayhem
 {
     public class PlayerController : MonoBehaviour
@@ -12,6 +14,8 @@ namespace MagneticMayhem
         [SerializeField] private bool groundCheck;
         
         [SerializeField] private InputReader input;
+
+        [field: SerializeField] public Player playerIdentifier { get; private set; }
 
         private Vector3 movement;
         private IMageneticPoleChangeable switchPolarity;
@@ -35,8 +39,9 @@ namespace MagneticMayhem
         // Update is called once per frame
         void FixedUpdate()
         {
-            //take input from player   
-            UpdateMovement();
+            //take input from player
+            if(groundCheck)
+                UpdateMovement();
         }
 
         private void OnDisable()
