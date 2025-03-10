@@ -110,7 +110,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &364197077894901574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,8 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStatus:
     pole: 1
-    rangeOfMegneticField: 2.5
-    poleIntensity: 0
+    rangeOfMegneticField: 4.62
+    poleIntensity: 255
 --- !u!114 &1182624540064752387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   groundCheck: 0
-  input: {fileID: 11400000, guid: 35408e7106578c3488a72dccc4166998, type: 2}
+  input: {fileID: 11400000, guid: 3ae79e294d7f76640a0aa069cf5c37aa, type: 2}
   <playerIdentifier>k__BackingField: 0
 --- !u!114 &5543172556257604128
 MonoBehaviour:
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444960827763416982}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34e18afa14417964ab08025f9862ca5b, type: 3}
   m_Name: 
@@ -386,6 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1783209610688580893}
   - component: {fileID: 8285006042542668319}
+  - component: {fileID: 7213897539886418483}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -452,7 +453,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0e0d5e38f19194a978d2f42b0b806775, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd973fe62115f9447a70e4fdaf9ca712, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -463,3 +464,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7213897539886418483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439002310317249235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542b7dded696c414f9302d1b97fde0f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  north: {fileID: 21300000, guid: fd973fe62115f9447a70e4fdaf9ca712, type: 3}
+  south: {fileID: 2324236343598682440, guid: 61e711bddecf619438f53731ba9b4042, type: 3}
