@@ -489,6 +489,10 @@ PrefabInstance:
       propertyPath: input
       value: 
       objectReference: {fileID: 11400000, guid: 3ae79e294d7f76640a0aa069cf5c37aa, type: 2}
+    - target: {fileID: 1182624540064752387, guid: cd589e9c7d21ce7429a8cb780642fae5, type: 3}
+      propertyPath: <playerIdentifier>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2650652863181160714, guid: cd589e9c7d21ce7429a8cb780642fae5, type: 3}
       propertyPath: m_Constraints
       value: 4
