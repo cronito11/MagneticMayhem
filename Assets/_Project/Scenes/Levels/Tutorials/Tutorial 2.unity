@@ -214,6 +214,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3269606300089569416, guid: ff1a073c278c79c4a9cbfc2a4b3c8e26, type: 3}
+      propertyPath: currentStatus.pole
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926925492200090027, guid: ff1a073c278c79c4a9cbfc2a4b3c8e26, type: 3}
+      propertyPath: currentStatus.pole
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5043045905655356923, guid: ff1a073c278c79c4a9cbfc2a4b3c8e26, type: 3}
       propertyPath: m_Name
       value: Surfaces (1)
@@ -260,6 +268,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6761688367574043348, guid: ff1a073c278c79c4a9cbfc2a4b3c8e26, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761688367574043348, guid: ff1a073c278c79c4a9cbfc2a4b3c8e26, type: 3}
+      propertyPath: currentStatus.pole
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8351026189951409460, guid: ff1a073c278c79c4a9cbfc2a4b3c8e26, type: 3}

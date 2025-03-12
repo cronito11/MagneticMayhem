@@ -28,7 +28,7 @@ namespace MagneticMayhem
         void OnPoleChange(MagnetStatus _newPoleStatus)
             
         {
-            if(_newPoleStatus.pole == MagenticPole.positive)
+            if(_newPoleStatus.pole != MagenticPole.positive)
             {
                 spriteRenderer.sprite = north;
             }

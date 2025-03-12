@@ -840,6 +840,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4926925492200090027, guid: ff1a073c278c79c4a9cbfc2a4b3c8e26, type: 3}
+      propertyPath: currentStatus.pole
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5043045905655356923, guid: ff1a073c278c79c4a9cbfc2a4b3c8e26, type: 3}
       propertyPath: m_Name
       value: Surfaces

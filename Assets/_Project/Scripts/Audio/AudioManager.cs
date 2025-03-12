@@ -1,3 +1,4 @@
+using Platformer397;
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -5,10 +6,12 @@ using UnityEngine.Rendering;
 
 namespace MagneticMayhem
 {
-    public class AudioManager : MonoBehaviour
+    public class AudioManager : Singleton<AudioManager>
     {
         #region constants
         private const string MASTER_VOLUME = "Master";
+        private const string SFX_VOLUME = "SFX";
+        private const string MUSIC_VOLUME = "Background";
         #endregion
         public Action<AudioSettings> OnAudioChange;
 
@@ -27,6 +30,21 @@ namespace MagneticMayhem
             audioMixer.SetFloat(MASTER_VOLUME, volume);
             OnAudioChange?.Invoke(settings);
         }
+        public void MuteMusic (bool isMuted)
+        {
+            _settings.isMusicMute = isMuted;
+            float volume = _settings.isMusicMute ? -80f : _settings.generalVolume;
+            audioMixer.SetFloat(MUSIC_VOLUME, volume);
+            OnAudioChange?.Invoke(settings);
+        }
+
+        public void MuteSfx (bool isMuted)
+        {
+            _settings.isSFXMute = isMuted;
+            float volume = _settings.isSFXMute ? -80f : _settings.generalVolume;
+            audioMixer.SetFloat(SFX_VOLUME, volume);
+            OnAudioChange?.Invoke(settings);
+        }
 
         public void SetVolume (float volume)
         {
@@ -41,6 +59,8 @@ namespace MagneticMayhem
     public struct AudioSettings
     {
         public bool isMuted;
+        public bool isMusicMute;
+        public bool isSFXMute;
         public float generalVolume;
         public float sfxVolume;
     }

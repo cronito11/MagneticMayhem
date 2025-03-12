@@ -16,12 +16,12 @@ namespace MagneticMayhem
             mageneticManager = GetComponentInParent<IMageneticPoleChangeable>();
         }
 
-        private void Start ()
+        private void OnEnable ()
         {
             mageneticManager.SuscribeListener(OnStatusChanged);
         }
 
-        private void OnDestroy ()
+        private void OnDisable ()
         {
             mageneticManager.RemoveListener(OnStatusChanged);
         }

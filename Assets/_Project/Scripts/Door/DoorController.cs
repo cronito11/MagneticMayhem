@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace MagneticMayhem
 {
@@ -14,14 +15,24 @@ namespace MagneticMayhem
                 PlayerController player = collision.GetComponent<PlayerController>();
                 if (player.playerIdentifier == playerIdentifier)
                 {
-                    Debug.Log("Player " + playerIdentifier + " entered the door");
-                    collision.gameObject.SetActive(false);
                     playerExit--;
                     if (playerExit == 0)
                     {
-                        Debug.Log("level Complete.");
-                        //trigger event from game manager
+                        GameManagerController.Instance.CompleteLevel(SceneManager.GetActiveScene().buildIndex, 3);
+                        SceneManagerController.Instance.NextLevel();
                     }
+                }
+            }
+        }
+
+        private void OnTriggerExit2D (Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                PlayerController player = collision.GetComponent<PlayerController>();
+                if (player.playerIdentifier == playerIdentifier)
+                {
+                    playerExit++;
                 }
             }
         }

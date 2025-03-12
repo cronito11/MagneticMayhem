@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7338084002636213211}
   - component: {fileID: 7650062775386883055}
   - component: {fileID: 2417911146980741046}
+  - component: {fileID: 6149273630755468327}
   m_Layer: 0
   m_Name: Surface
   m_TagString: Ground
@@ -145,6 +146,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 30, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &6149273630755468327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271992895438551159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94e6b5e19e687b49b9fd730f8deb1c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRender: {fileID: 3739931591695697317}
+  states:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1808352914478816904
 GameObject:
   m_ObjectHideFlags: 0
