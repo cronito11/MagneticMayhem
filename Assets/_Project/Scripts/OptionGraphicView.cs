@@ -27,8 +27,8 @@ namespace MagneticMayhem
         private void OnValueChange (AudioSettings settings)
         {
             slider?.SetValueWithoutNotify(settings.generalVolume);
-            musicIconState.sprite = settings.isMuted ? musicSpriteStates [0] : musicSpriteStates [1];
-            soundIconState.sprite = settings.isSoundMute ? soundSpriteStates [0] : soundSpriteStates [1];
+            musicIconState.sprite = settings.isMusicMute ? musicSpriteStates [0] : musicSpriteStates [1];
+            soundIconState.sprite = settings.isSFXMute ? soundSpriteStates [0] : soundSpriteStates [1];
         }
 
         private void OnDestroy ()

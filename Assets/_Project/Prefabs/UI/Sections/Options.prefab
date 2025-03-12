@@ -943,7 +943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3781977066322918001, guid: 1392d2d670d6ea348943f415f2ddf41d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchMute
+      value: SwitchMuteMusic
       objectReference: {fileID: 0}
     - target: {fileID: 3781977066322918001, guid: 1392d2d670d6ea348943f415f2ddf41d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1536,6 +1536,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 589544496810175277}
     m_Modifications:
+    - target: {fileID: 3781977066322918001, guid: 1392d2d670d6ea348943f415f2ddf41d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781977066322918001, guid: 1392d2d670d6ea348943f415f2ddf41d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781977066322918001, guid: 1392d2d670d6ea348943f415f2ddf41d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3874682858550842080}
+    - target: {fileID: 3781977066322918001, guid: 1392d2d670d6ea348943f415f2ddf41d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781977066322918001, guid: 1392d2d670d6ea348943f415f2ddf41d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchMuteSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781977066322918001, guid: 1392d2d670d6ea348943f415f2ddf41d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MagneticMayhem.OptionPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781977066322918001, guid: 1392d2d670d6ea348943f415f2ddf41d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3781977066322918006, guid: 1392d2d670d6ea348943f415f2ddf41d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

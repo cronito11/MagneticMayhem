@@ -24,7 +24,7 @@ namespace MagneticMayhem
         {
             volumeControl?.onValueChanged.RemoveListener(ChangeVolume);
         }
-        public void SwitchMuteMusic ()
+        public void SwitchMute ()
         {
             audioManager.Mute(!audioManager.settings.isMuted);
         }
@@ -36,11 +36,12 @@ namespace MagneticMayhem
 
         public void SwitchMuteMusic ()
         {
-            audioManager.Mute
+            audioManager.MuteMusic(!audioManager.settings.isMusicMute);
         }
 
         public void SwitchMuteSFX ()
-        { 
+        {
+            audioManager.MuteSfx(!audioManager.settings.isSFXMute);
         }
     }
 }

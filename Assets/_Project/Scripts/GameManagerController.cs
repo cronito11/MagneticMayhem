@@ -42,7 +42,8 @@ namespace MagneticMayhem
         {
             _playerData = new PlayerData (new AudioSettings {
                 isMuted = false,
-                isSoundMute = false,
+                isMusicMute = false,
+                isSFXMute = false,
                 generalVolume = 1,
                 sfxVolume = 1,
 
