@@ -9,9 +9,9 @@ namespace MagneticMayhem
     public class AudioManager : Singleton<AudioManager>
     {
         #region constants
-        private const string MASTER_VOLUME = "Master";
-        private const string SFX_VOLUME = "SFX";
-        private const string MUSIC_VOLUME = "Background";
+        private const string MASTER_VOLUME = "MasterVolume";
+        private const string SFX_VOLUME = "SFXVolume";
+        private const string MUSIC_VOLUME = "MusicVolume";
         #endregion
         public Action<AudioSettings> OnAudioChange;
 
