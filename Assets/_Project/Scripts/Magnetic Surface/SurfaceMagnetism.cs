@@ -11,7 +11,7 @@ namespace MagneticMayhem
         //Magntic constant is a constant value that is used to calculate the force between two magnetic poles but it is not used in this script
         private const float MAGNETIC_CONSTANT = 1.0e-7f;
         
-        //a reference of transform where distnce will be calculated because if the transform is too close with player it would give 0 distance and force will be infinite
+        //a reference of transform where distnce will be calculated because if the transform is too close with playerIdentifier it would give 0 distance and force will be infinite
         [SerializeField] private Transform distanceAnchor; 
         
         [SerializeField] private MagnetStatus currentStatus;

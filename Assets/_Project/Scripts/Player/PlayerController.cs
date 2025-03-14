@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public enum Player { playerOne = 0, playerTwo = 1}; //This is a enum that is used to identify the player
+public enum Player { playerOne = 0, playerTwo = 1}; //This is a enum that is used to identify the playerIdentifier
 
 namespace MagneticMayhem
 {
@@ -39,7 +39,7 @@ namespace MagneticMayhem
         // Update is called once per frame
         void FixedUpdate()
         {
-            //take input from player
+            //take input from playerIdentifier
             if(groundCheck)
                 UpdateMovement();
         }
@@ -59,18 +59,18 @@ namespace MagneticMayhem
         {
             movement.x = move.x;
             movement.y = move.y;    
-            //move player
+            //move playerIdentifier
             Debug.Log(move, gameObject);  
         }
 
         private void UpdateMovement()
         {
-            //move player
+            //move playerIdentifier
             transform.Translate(Vector2.right * movement.x * moveSpeed * Time.deltaTime);
         }
         private void OnCollisionEnter2D(Collision2D other)
         {
-            //check if player is grounded
+            //check if playerIdentifier is grounded
             if(other.gameObject.CompareTag("Ground"))
             {
                 groundCheck = true;
@@ -79,7 +79,7 @@ namespace MagneticMayhem
 
         private void OnCollisionExit2D(Collision2D other)
         {
-            //check if player is grounded and esitting from the ground collider 
+            //check if playerIdentifier is grounded and esitting from the ground collider 
             if (other.gameObject.CompareTag("Ground"))
             {
                 groundCheck = false;

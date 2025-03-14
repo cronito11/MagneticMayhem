@@ -11,6 +11,11 @@ namespace MagneticMayhem
         
         //Check formula
         private const float MAGNETIC_CONSTANT = 1.0e-7f;
+        private const string PLAYER_ONE_TAG = "PlayerOne";
+        private const string PLAYER_TWO_TAG = "PlayerTwo";
+
+        [SerializeField] private int configurationLevel;
+        private Player playerIdentifier;
         //Add comment
         [SerializeField] private MagnetStatus currentStatus;
 
@@ -33,6 +38,12 @@ namespace MagneticMayhem
         private void Awake ()
         {
             rb = GetComponent<Rigidbody2D>();
+            playerIdentifier = GetComponent<PlayerController>().playerIdentifier;
+        }
+
+        private void Start()
+        {
+            ConfigureSelf();
         }
 
         public void ApplyMagnetism ()
@@ -112,6 +123,24 @@ namespace MagneticMayhem
         {
             this.currentStatus.pole = pole;
             OnStatusChanged?.Invoke(currentStatus);
+        }
+
+        public void ConfigureSelf()
+        {
+            LevelConfiguration levelConfiguration = LevelConfigurationManager.Instance.GetLevelConfigOf(configurationLevel);
+            if (playerIdentifier == Player.playerOne)
+            {
+                
+                this.currentStatus.rangeOfMegneticField = levelConfiguration.PlayerOneMagneticFieldRange;
+                this.currentStatus.poleIntensity = levelConfiguration.PlayerOneMagneticIntensity;
+                this.currentStatus.pole = levelConfiguration.PlayerOnePole;
+            }
+            else
+            {
+                this.currentStatus.rangeOfMegneticField = levelConfiguration.PlayerTwoMagneticFieldRange;
+                this.currentStatus.poleIntensity = levelConfiguration.PlayerTwoMagneticIntensity;
+                this.currentStatus.pole = levelConfiguration.PlayerTwoPole;
+            }
         }
     }
 }
