@@ -286,6 +286,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &774213973
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7926689135367823379, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_Name
+      value: Boundaries
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 43986df286f887e46ac631ece60fd696, type: 3}
 --- !u!1 &960590842
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +703,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 653470177474068416, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_text
-      value: "Similar pole repulse \nUse repulsive force to stick to ceilling "
+      value: ' Use repulsive force to stick to ceilling '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1823306489814099161, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_text
+      value: Similar pole repulse
       objectReference: {fileID: 0}
     - target: {fileID: 2495143270858260015, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_Pivot.x
@@ -731,6 +792,10 @@ PrefabInstance:
     - target: {fileID: 6495330433180372109, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540148697151804985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 155
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1093,3 +1158,4 @@ SceneRoots:
   - {fileID: 485819463}
   - {fileID: 960590845}
   - {fileID: 1541388517}
+  - {fileID: 774213973}

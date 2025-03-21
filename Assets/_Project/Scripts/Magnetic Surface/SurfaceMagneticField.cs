@@ -6,12 +6,14 @@ namespace MagneticMayhem
     public class SurfaceMagneticField : MonoBehaviour
     {
         [SerializeField] private BoxCollider2D magneticFieldArea;
+        [SerializeField] private float defaultLength = 30f;
         private IMagneticApply magneticManager;
-
+        private SurfaceMagnetism surfaceMagnetism;
 
         private void Awake()
         {
             magneticManager = GetComponentInParent<IMagneticApply>();
+            surfaceMagnetism = GetComponentInParent<SurfaceMagnetism>();    
             magneticManager.SuscribeListener(OnStatusChanged);
         }
 
@@ -22,7 +24,11 @@ namespace MagneticMayhem
 
         private void OnStatusChanged(MagnetStatus status)
         {
-            magneticFieldArea.size = new Vector2(30f, status.rangeOfMegneticField);
+            if(surfaceMagnetism.alignment == SurfaceAlignment.Vertical)
+                magneticFieldArea.size = new Vector2(defaultLength, status.rangeOfMegneticField);
+            else
+                magneticFieldArea.size = new Vector2(status.rangeOfMegneticField, defaultLength);
+
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

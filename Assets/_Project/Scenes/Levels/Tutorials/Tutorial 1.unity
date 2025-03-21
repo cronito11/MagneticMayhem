@@ -368,6 +368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 6613558611682469247, guid: 3368c2853b17695488ce7b7b584c8eae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8709417048209682136, guid: 3368c2853b17695488ce7b7b584c8eae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 491.8198
@@ -639,6 +643,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd589e9c7d21ce7429a8cb780642fae5, type: 3}
+--- !u!1001 &1828458736
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390829852544272950, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7926689135367823379, guid: 43986df286f887e46ac631ece60fd696, type: 3}
+      propertyPath: m_Name
+      value: Boundaries
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 43986df286f887e46ac631ece60fd696, type: 3}
 --- !u!1001 &2092149392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -734,9 +795,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 653470177474068416, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_text
-      value: 'A,D to move Player 1
+      value: 'A,D keys to move Player 1
 
-        J, L key to move player 2'
+'
       objectReference: {fileID: 0}
     - target: {fileID: 653470177474068416, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_fontSize
@@ -745,6 +806,22 @@ PrefabInstance:
     - target: {fileID: 653470177474068416, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_fontSizeBase
       value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 780689220039792985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 780689220039792985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 780689220039792985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -77.70233
+      objectReference: {fileID: 0}
+    - target: {fileID: 1823306489814099161, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_text
+      value: J, L keys to move Player 2
       objectReference: {fileID: 0}
     - target: {fileID: 2495143270858260015, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_Pivot.x
@@ -834,6 +911,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6540148697151804985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540148697151804985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540148697151804985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 160
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -851,3 +940,4 @@ SceneRoots:
   - {fileID: 585700725}
   - {fileID: 8505770351733811812}
   - {fileID: 999911961}
+  - {fileID: 1828458736}

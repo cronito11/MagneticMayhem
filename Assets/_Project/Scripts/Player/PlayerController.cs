@@ -60,7 +60,7 @@ namespace MagneticMayhem
             movement.x = move.x;
             movement.y = move.y;    
             //move player
-            Debug.Log(move, gameObject);  
+            //Debug.Log(move, gameObject);  
         }
 
         private void UpdateMovement()

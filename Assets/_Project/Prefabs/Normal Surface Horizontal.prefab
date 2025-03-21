@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2417911146980741046}
   - component: {fileID: 6149273630755468327}
   m_Layer: 0
-  m_Name: Surface
+  m_Name: Normal Surface Horizontal
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,6 +100,8 @@ MonoBehaviour:
     pole: 2
     rangeOfMegneticField: 9
     poleIntensity: 70
+  magnetType: 0
+  <alignment>k__BackingField: 0
 --- !u!61 &2417911146980741046
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,6 +165,7 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 1, a: 1}
   - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1808352914478816904
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magneticFieldArea: {fileID: 9168143249971216185}
+  defaultLength: 30
 --- !u!1 &5218003950097719467
 GameObject:
   m_ObjectHideFlags: 0
