@@ -368,6 +368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 6613558611682469247, guid: 3368c2853b17695488ce7b7b584c8eae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8709417048209682136, guid: 3368c2853b17695488ce7b7b584c8eae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 491.8198
@@ -734,9 +738,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 653470177474068416, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_text
-      value: 'A,D to move Player 1
+      value: 'A,D keys to move Player 1
 
-        J, L key to move player 2'
+'
       objectReference: {fileID: 0}
     - target: {fileID: 653470177474068416, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_fontSize
@@ -745,6 +749,22 @@ PrefabInstance:
     - target: {fileID: 653470177474068416, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_fontSizeBase
       value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 780689220039792985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 780689220039792985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 780689220039792985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -77.70233
+      objectReference: {fileID: 0}
+    - target: {fileID: 1823306489814099161, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_text
+      value: J, L keys to move Player 2
       objectReference: {fileID: 0}
     - target: {fileID: 2495143270858260015, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_Pivot.x
@@ -833,6 +853,18 @@ PrefabInstance:
     - target: {fileID: 6495330433180372109, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540148697151804985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540148697151804985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540148697151804985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 160
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

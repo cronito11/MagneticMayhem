@@ -646,7 +646,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 653470177474068416, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_text
-      value: "Similar pole repulse \nUse repulsive force to stick to ceilling "
+      value: ' Use repulsive force to stick to ceilling '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1823306489814099161, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_text
+      value: Similar pole repulse
       objectReference: {fileID: 0}
     - target: {fileID: 2495143270858260015, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_Pivot.x
@@ -731,6 +735,10 @@ PrefabInstance:
     - target: {fileID: 6495330433180372109, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540148697151804985, guid: 50afca80878f46b42b6e113f8a5fac36, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 155
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
