@@ -2,6 +2,16 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum MagnetSurfaceType
+{
+    NormalSurface = 0, BackSurface= 1
+}
+
+public enum SurfaceAlignment
+{
+    Vertical = 0, Horizontal = 1
+}
+
 namespace MagneticMayhem
 {
     public class SurfaceMagnetism : MonoBehaviour,IMagneticApply
@@ -12,10 +22,14 @@ namespace MagneticMayhem
         private const float MAGNETIC_CONSTANT = 1.0e-7f;
         
         //a reference of transform where distnce will be calculated because if the transform is too close with player it would give 0 distance and force will be infinite
-        [SerializeField] private Transform distanceAnchor; 
+        [SerializeField] protected Transform distanceAnchor; 
         
-        [SerializeField] private MagnetStatus currentStatus;
-        
+        [SerializeField] protected MagnetStatus currentStatus;
+
+        [SerializeField] protected MagnetSurfaceType magnetType;
+
+        [field: SerializeField] public SurfaceAlignment alignment { get; protected set; }
+
         private Dictionary<IMagneticRecieve, Transform> magnetsArround = new Dictionary<IMagneticRecieve, Transform>();
        
 
@@ -34,7 +48,7 @@ namespace MagneticMayhem
             }
         }
 
-        private void CalculateMagenticForce(Transform target, IMagneticRecieve magnet)
+        protected virtual void CalculateMagenticForce(Transform target, IMagneticRecieve magnet)
         {
             if (magnet.pole.Equals(MagenticPole.None))
                 return;
@@ -42,7 +56,15 @@ namespace MagneticMayhem
             float distance = Mathf.Abs(Mathf.Floor(distanceAnchor.position.y) - Mathf.Floor(target.position.y));
 
             float magneticForce = currentStatus.poleIntensity / (distance * distance);
-            Vector2 direction = Vector2.up * Mathf.Sign(distanceAnchor.position.y - target.position.y);
+
+            Vector2 direction;
+
+            if(alignment == SurfaceAlignment.Horizontal)
+
+                direction = Vector2.right * Mathf.Sign(distanceAnchor.position.x - target.position.x);
+            else
+                direction = Vector2.up * Mathf.Sign(distanceAnchor.position.y - target.position.y);
+
             magnet.ReceivMagnetism(direction, magneticForce, currentStatus.pole);
         }
        

@@ -15,7 +15,8 @@ namespace MagneticMayhem
     {
         None = 0,
         positive = 1,
-        negative = 2
+        negative = 2,
+        black = 3
     }
 
     public interface IMageneticPoleChangeable

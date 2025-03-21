@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6013835369182228064}
   m_Layer: 0
-  m_Name: Surfaces
+  m_Name: Normal Surfaces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
