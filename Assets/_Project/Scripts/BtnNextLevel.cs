@@ -23,7 +23,7 @@ namespace MagneticMayhem
             button.onClick.RemoveListener(OnClick);
         }
 
-        private void OnClick ()
+        public void OnClick ()
         {
             SceneManagerController.Instance.NextLevel();
         }

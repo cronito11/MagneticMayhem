@@ -25,6 +25,17 @@ namespace MagneticMayhem
             }
         }
 
+#if UNITY_EDITOR
+        private void Update ()
+        {
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                GameManagerController.Instance.CompleteLevel(SceneManager.GetActiveScene().buildIndex, 3);
+                SceneManagerController.Instance.NextLevel();
+            }
+        }
+#endif
+
         private void OnTriggerExit2D (Collider2D collision)
         {
             if (collision.CompareTag("Player"))

@@ -76,6 +76,9 @@ namespace MagneticMayhem
                     updatedLevel.stars = stars;
                     _playerData.levelsData [index] = updatedLevel;
                     _playerData.lastLevel = level;
+                } else
+                {
+                    _playerData.lastLevel = level;
                 }
             }
         }

@@ -30,6 +30,11 @@ namespace MagneticMayhem
                     gameMenuMusic.Stop();
                     finalMenuMusic.Stop();
                 break;
+                case SceneType.FinalMenu:
+                    mainMenuMusic.Stop();
+                    gameMenuMusic.Stop();
+                    finalMenuMusic.Play();
+                break;
                 default:
                     mainMenuMusic.Stop();
                     gameMenuMusic.Play();

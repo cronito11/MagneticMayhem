@@ -81,16 +81,16 @@ namespace MagneticMayhem
                 yield return null;
             }
 
-            switch (sceneId)
+            if(sceneId == 0)
             {
-                case 0:
                 OnSceneLoad?.Invoke(SceneType.MainMenu);
-                break;
-                default:
+            } else if (sceneId == LEVLES_AMOUNT+1)
+            {
+                OnSceneLoad?.Invoke(SceneType.FinalMenu);
+            } else
+            {
                 OnSceneLoad?.Invoke(SceneType.Game);
-                break;
             }
-
         }
 
         public void ChangeScene (int sceneId)
@@ -105,15 +105,10 @@ namespace MagneticMayhem
             StartCoroutine(LoadingProcess(operation, sceneId));
         }
 
+
         public void NextLevel ()
         {
-            if (LEVLES_AMOUNT == GameManagerController.Instance.playerData.levelsData.Count)
-            {
-                GameManagerController.Instance.CompleteGame();
-                SceneManagerController.Instance.ChangeScene(0);
-            }
-            else
-                SceneManagerController.Instance.ChangeScene(GameManagerController.Instance.playerData.lastLevel +1);
+            SceneManagerController.Instance.ChangeScene(GameManagerController.Instance.playerData.lastLevel +1);
         }
     }
 }
