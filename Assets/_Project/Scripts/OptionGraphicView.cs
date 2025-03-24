@@ -12,7 +12,7 @@ namespace MagneticMayhem
         [SerializeField] private Image musicIconState;
         [SerializeField] private Sprite[] musicSpriteStates;
 
-        [Header ("Music Data")]
+        [Header ("Sound Data")]
         [SerializeField] private Image soundIconState;
         [SerializeField] private Sprite[] soundSpriteStates;
 

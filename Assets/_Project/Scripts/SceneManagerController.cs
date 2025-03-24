@@ -21,13 +21,14 @@ namespace MagneticMayhem
 
         public event Action<SceneType> OnSceneLoad;
 
-        [SerializeField] private int LEVLES_AMOUNT = 3; //TODO:
+        private int amountLevels = 3;
         [SerializeField] private CanvasGroup loadingScreen;
 
         private float currentTime;
         protected override void Awake ()
         {
             base.Awake();
+            amountLevels = SceneManager.sceneCountInBuildSettings -2;
             HideLoadingScreen();
         }
         public void ChangeScene (string sceneName)
@@ -84,7 +85,7 @@ namespace MagneticMayhem
             if(sceneId == 0)
             {
                 OnSceneLoad?.Invoke(SceneType.MainMenu);
-            } else if (sceneId == LEVLES_AMOUNT+1)
+            } else if (sceneId == amountLevels+1)
             {
                 OnSceneLoad?.Invoke(SceneType.FinalMenu);
             } else
@@ -109,6 +110,11 @@ namespace MagneticMayhem
         public void NextLevel ()
         {
             SceneManagerController.Instance.ChangeScene(GameManagerController.Instance.playerData.lastLevel +1);
+        }
+
+        public void RepeatLevel ()
+        {
+            SceneManagerController.Instance.ChangeScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

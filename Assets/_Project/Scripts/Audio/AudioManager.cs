@@ -33,7 +33,7 @@ namespace MagneticMayhem
         public void MuteMusic (bool isMuted)
         {
             _settings.isMusicMute = isMuted;
-            float volume = _settings.isMusicMute ? -80f : _settings.generalVolume;
+            float volume = _settings.isMusicMute ? -80f : _settings.musicVolume;
             audioMixer.SetFloat(MUSIC_VOLUME, volume);
             OnAudioChange?.Invoke(settings);
         }
@@ -41,7 +41,7 @@ namespace MagneticMayhem
         public void MuteSfx (bool isMuted)
         {
             _settings.isSFXMute = isMuted;
-            float volume = _settings.isSFXMute ? -80f : _settings.generalVolume;
+            float volume = _settings.isSFXMute ? -80f : _settings.sfxVolume;
             audioMixer.SetFloat(SFX_VOLUME, volume);
             OnAudioChange?.Invoke(settings);
         }
@@ -54,6 +54,22 @@ namespace MagneticMayhem
             audioMixer.SetFloat(MASTER_VOLUME, dB);
             OnAudioChange?.Invoke(settings);
         }
+
+        public void SetSFXVolume (float volume)
+        {
+            _settings.sfxVolume = volume;
+            float dB = settings.isSFXMute ? -80f : Mathf.Log10(Mathf.Clamp(volume, 0.0001f, 1)) * 20;
+            audioMixer.SetFloat(SFX_VOLUME, dB);
+            OnAudioChange?.Invoke(settings);
+        }
+
+        public void SetMusicVolume (float volume)
+        {
+            _settings.musicVolume = volume;
+            float dB = settings.isMusicMute ? -80f : Mathf.Log10(Mathf.Clamp(volume, 0.0001f, 1)) * 20;
+            audioMixer.SetFloat(MUSIC_VOLUME, dB);
+            OnAudioChange?.Invoke(settings);
+        }
     }
 
     public struct AudioSettings
@@ -63,5 +79,6 @@ namespace MagneticMayhem
         public bool isSFXMute;
         public float generalVolume;
         public float sfxVolume;
+        public float musicVolume;
     }
 }

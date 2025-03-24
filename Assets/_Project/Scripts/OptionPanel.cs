@@ -6,7 +6,8 @@ namespace MagneticMayhem
 {
     public class OptionPanel : PanelManager
     {
-        [SerializeField] private Slider volumeControl;
+        [SerializeField] private Slider backgroundvolumeControl;
+        [SerializeField] private Slider sfxVolumeControl;
 
         private AudioManager audioManager;
 
@@ -17,21 +18,28 @@ namespace MagneticMayhem
         private void Start ()
         {
             audioManager = AudioManager.Instance;
-            volumeControl?.onValueChanged.AddListener(ChangeVolume);
+            backgroundvolumeControl?.onValueChanged.AddListener(ChangeVolumeGeneral);
+            sfxVolumeControl?.onValueChanged.AddListener(ChangeVolumeSfx);
         }
 
         private void OnDestroy ()
         {
-            volumeControl?.onValueChanged.RemoveListener(ChangeVolume);
+            backgroundvolumeControl?.onValueChanged.RemoveListener(ChangeVolumeGeneral);
+            sfxVolumeControl?.onValueChanged.RemoveListener(ChangeVolumeSfx);
         }
         public void SwitchMute ()
         {
             audioManager.Mute(!audioManager.settings.isMuted);
         }
 
-        public void ChangeVolume (float value)
+        public void ChangeVolumeGeneral (float value)
         {
-            audioManager.SetVolume(value);
+            audioManager.SetMusicVolume(value);
+        }
+
+        public void ChangeVolumeSfx (float value)
+        {
+            audioManager.SetMusicVolume(value);
         }
 
         public void SwitchMuteMusic ()

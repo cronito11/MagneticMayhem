@@ -569,7 +569,7 @@ PrefabInstance:
     - target: {fileID: 1182624540064752387, guid: cd589e9c7d21ce7429a8cb780642fae5, type: 3}
       propertyPath: input
       value: 
-      objectReference: {fileID: 11400000, guid: 3ae79e294d7f76640a0aa069cf5c37aa, type: 2}
+      objectReference: {fileID: 11400000, guid: 999e448ff43018d45bdce31ad940dbfb, type: 2}
     - target: {fileID: 1182624540064752387, guid: cd589e9c7d21ce7429a8cb780642fae5, type: 3}
       propertyPath: <playerIdentifier>k__BackingField
       value: 1
@@ -654,11 +654,15 @@ PrefabInstance:
     - target: {fileID: 1182624540064752387, guid: cd589e9c7d21ce7429a8cb780642fae5, type: 3}
       propertyPath: input
       value: 
-      objectReference: {fileID: 11400000, guid: 999e448ff43018d45bdce31ad940dbfb, type: 2}
+      objectReference: {fileID: 11400000, guid: 3ae79e294d7f76640a0aa069cf5c37aa, type: 2}
     - target: {fileID: 2650652863181160714, guid: cd589e9c7d21ce7429a8cb780642fae5, type: 3}
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3368138541269964553, guid: cd589e9c7d21ce7429a8cb780642fae5, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 3599920388348430902}
     - target: {fileID: 7936241757994717088, guid: cd589e9c7d21ce7429a8cb780642fae5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.16
@@ -761,6 +765,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 745c6c23f046bcd43b06d8036f1a0546, type: 3}
+--- !u!20 &3599920388348430902 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3727823709287125007, guid: 745c6c23f046bcd43b06d8036f1a0546, type: 3}
+  m_PrefabInstance: {fileID: 3599920388348430901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
