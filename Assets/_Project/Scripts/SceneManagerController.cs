@@ -2,10 +2,9 @@
 using Platformer397;
 using System;
 using System.Collections;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEngine.Rendering.HDROutputUtils;
+
 
 namespace MagneticMayhem
 {
@@ -109,9 +108,12 @@ namespace MagneticMayhem
         public void NextLevel ()
         {
             if (LEVLES_AMOUNT == GameManagerController.Instance.playerData.levelsData.Count)
+            {
+                GameManagerController.Instance.CompleteGame();
                 SceneManagerController.Instance.ChangeScene(0);
+            }
             else
-                SceneManagerController.Instance.ChangeScene(GameManagerController.Instance.playerData.levelsData.Count +1);
+                SceneManagerController.Instance.ChangeScene(GameManagerController.Instance.playerData.lastLevel +1);
         }
     }
 }

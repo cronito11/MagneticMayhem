@@ -13,10 +13,10 @@ namespace MagneticMayhem
         protected override void Awake ()
         {
             base.Awake();
-            audioManager = AudioManager.Instance;
         }
         private void Start ()
         {
+            audioManager = AudioManager.Instance;
             volumeControl?.onValueChanged.AddListener(ChangeVolume);
         }
 

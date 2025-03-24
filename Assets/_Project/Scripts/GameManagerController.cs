@@ -9,11 +9,13 @@ namespace MagneticMayhem
     {
         public AudioSettings audioConfiguration;
         public List<LevelData> levelsData;
+        public int lastLevel;
 
         public PlayerData (AudioSettings config)
         {
             audioConfiguration = config;
             levelsData = new List<LevelData>();
+            lastLevel = 0;
         }
     }
 
@@ -46,7 +48,6 @@ namespace MagneticMayhem
                 isSFXMute = false,
                 generalVolume = 1,
                 sfxVolume = 1,
-
             });
         }
 
@@ -65,6 +66,7 @@ namespace MagneticMayhem
                     pass = true,
                     levelNum = level
                 });
+                _playerData.lastLevel = level;
             }
             else 
             {
@@ -73,8 +75,15 @@ namespace MagneticMayhem
                     LevelData updatedLevel = _playerData.levelsData[index];
                     updatedLevel.stars = stars;
                     _playerData.levelsData [index] = updatedLevel;
+                    _playerData.lastLevel = level;
                 }
             }
         }
+
+        public void CompleteGame ()
+        {
+            _playerData.lastLevel =0;
+        }
     }
+
 }
