@@ -1,6 +1,7 @@
 ﻿using Platformer397;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace MagneticMayhem
 {
@@ -30,7 +31,13 @@ namespace MagneticMayhem
     public class GameManagerController : Singleton<GameManagerController>
     {
         private const int MAX_STARS = 3;
-        private PlayerData _playerData;
+        private PlayerData _playerData =  new PlayerData (new AudioSettings {
+            isMuted = false,
+            isMusicMute = false,
+            isSFXMute = false,
+            generalVolume = 1,
+            sfxVolume = 1,
+        });
 
         public PlayerData playerData => _playerData;
 
@@ -40,15 +47,15 @@ namespace MagneticMayhem
             LoadData();
         }
 
-        private void LoadData ()
+        private void LoadData ()//TODO: it should be in different scritp
         {
-            _playerData = new PlayerData (new AudioSettings {
-                isMuted = false,
-                isMusicMute = false,
-                isSFXMute = false,
-                generalVolume = 1,
-                sfxVolume = 1,
-            });
+            _playerData = JsonUtility.FromJson<PlayerData>(PlayerPrefs.GetString("PlayerData", JsonUtility.ToJson(_playerData)));
+        }
+
+
+        private void SaveLevel () //TODO: it should be in different scritp
+        {
+            PlayerPrefs.SetString("PlayerData", JsonUtility.ToJson(_playerData));
         }
 
         public void CompleteLevel (int level, int stars)
@@ -81,11 +88,21 @@ namespace MagneticMayhem
                     _playerData.lastLevel = level;
                 }
             }
+            SaveLevel();
         }
+
 
         public void CompleteGame ()
         {
             _playerData.lastLevel =0;
+        }
+
+        internal bool IsLevelUnlocked (int value)
+        {
+            if(value >= playerData.levelsData.Count)
+                return false;
+            else
+                return true;
         }
     }
 
