@@ -28,7 +28,8 @@ namespace MagneticMayhem
 
         private void OnStatusChanged (MagnetStatus status)
         {
-            spriteRender.sprite = states [(int)status.pole];
+            spriteRender.sprite = states[(int)status.pole];
+            Debug.Log((int)status.pole);
         }
     }
 }

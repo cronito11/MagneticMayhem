@@ -1,16 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace MagneticMayhem
 {
 
-    public class Magnetism : MonoBehaviour, IMagneticRecieve, IMagneticApply, IMageneticPoleChangeable
+    public class Magnetism : MonoBehaviour, IMagneticRecieve, IMagneticApply, IMageneticPoleChangeable, IConfigurable
     {
         private Action<MagnetStatus> OnStatusChanged;
         
         //Check formula
         private const float MAGNETIC_CONSTANT = 1.0e-7f;
+
+        //configuration 
+        [Header("Magnetism Configuration")]
+        [SerializeField] LevelConfigurableGO levelConfiguration;
         //Add comment
         [SerializeField] private MagnetStatus currentStatus;
 
@@ -22,6 +28,7 @@ namespace MagneticMayhem
 
         public MagenticPole pole => currentStatus.pole;
 
+        private PlayerController playerController;
         #region TestCases
 #if UNITY_EDITOR
         private void OnValidate ()
@@ -33,8 +40,14 @@ namespace MagneticMayhem
         private void Awake ()
         {
             rb = GetComponent<Rigidbody2D>();
+            playerController = GetComponent<PlayerController>();
         }
 
+        private void Start()
+        {
+            //configure magnetism
+            Configure();
+        }
         public void ApplyMagnetism ()
         {
             foreach (var magnet in magnetsArround)
@@ -113,5 +126,24 @@ namespace MagneticMayhem
             this.currentStatus.pole = pole;
             OnStatusChanged?.Invoke(currentStatus);
         }
+
+        public void Configure()
+        {
+            
+            //deserialize
+            PlayerConfigurableGO playerConfig = levelConfiguration.configurableGOs.OfType<PlayerConfigurableGO>().FirstOrDefault(playerConfig => playerConfig.playerIdentifier == playerController.playerIdentifier);
+        
+            if(playerConfig == null)
+            {
+                Debug.Log($"PlayerConfigurableGO not found for {playerController.playerIdentifier}");
+                return;
+            }
+            //configure magnetic status
+            UpdateMagnetStatus(playerConfig.playerStatus);
+
+            //configure magnetism
+            this.enabled = playerConfig.magnetismEnabled;
+        }
+
     }
 }
