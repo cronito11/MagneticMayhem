@@ -15,6 +15,6 @@ MonoBehaviour:
   <playerIdentifier>k__BackingField: 1
   <playerStatus>k__BackingField:
     pole: 2
-    rangeOfMegneticField: 0
-    poleIntensity: 0
+    rangeOfMegneticField: 4.62
+    poleIntensity: 255
   <magnetismEnabled>k__BackingField: 0

@@ -13,10 +13,10 @@ namespace MagneticMayhem
         
         //Check formula
         private const float MAGNETIC_CONSTANT = 1.0e-7f;
-
+        private const int MIN_MAGNETIC_FORCE = 1;
         //configuration 
         [Header("Magnetism Configuration")]
-        [SerializeField] LevelConfigurableGO levelConfiguration;
+        [SerializeField] LevelConfigurableSO levelConfiguration;
         //Add comment
         [SerializeField] private MagnetStatus currentStatus;
 
@@ -67,18 +67,18 @@ namespace MagneticMayhem
             if (magnet.pole.Equals(MagenticPole.None))
                 return;
 
-            Vector2 distance = new Vector2(Mathf.Floor( transform.position.x),Mathf.Floor( transform.position.y)) - new Vector2(Mathf.Floor( target.position.x),Mathf.Floor( target.position.y));
-            distance.x = (float) Math.Round(distance.x,2);
-            distance.y = (float) Math.Round(distance.y,2);
+            Vector2 distance = new Vector2(( transform.position.x),( transform.position.y)) - new Vector2(( target.position.x),( target.position.y));
+            
 
-            float magneticForce = currentStatus.poleIntensity / (distance.sqrMagnitude);
-            magnet.ReceivMagnetism(distance.normalized, magneticForce, currentStatus.pole );
+            float magneticForce = Mathf.Max(currentStatus.poleIntensity / (distance.sqrMagnitude), MIN_MAGNETIC_FORCE);
+            magnet.ReceivMagnetism(distance.normalized,(magneticForce), currentStatus.pole );
         }
 
         public void ReceivMagnetism (Vector2 direction, float magnitude, MagenticPole pole)
         {
             magnitude *= pole.Equals(currentStatus.pole) ? -1 : 1;
             rb.AddForce(direction * magnitude);
+            
         }
 
         public void AddMagnet (IMagneticRecieve magnet)
@@ -115,10 +115,10 @@ namespace MagneticMayhem
 
         public void Switch ()
         {
-            if (pole.Equals(MagenticPole.positive))
-                ChangePole(MagenticPole.negative);
+            if (pole.Equals(MagenticPole.South))
+                ChangePole(MagenticPole.North);
             else
-                ChangePole(MagenticPole.positive);
+                ChangePole(MagenticPole.South);
         }
 
         public void ChangePole (MagenticPole pole)
@@ -131,7 +131,7 @@ namespace MagneticMayhem
         {
             
             //deserialize
-            PlayerConfigurableGO playerConfig = levelConfiguration.configurableGOs.OfType<PlayerConfigurableGO>().FirstOrDefault(playerConfig => playerConfig.playerIdentifier == playerController.playerIdentifier);
+            PlayerConfigurableSO playerConfig = levelConfiguration.configurableSOs.OfType<PlayerConfigurableSO>().FirstOrDefault(playerConfig => playerConfig.playerIdentifier == playerController.playerIdentifier);
         
             if(playerConfig == null)
             {

@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace MagneticMayhem
 {
-    [CreateAssetMenu(fileName = "PlayerConfigurableGO", menuName = "Scriptable Objects/PlayerConfigurableGO")]
-    public class PlayerConfigurableGO : ConfigurableGO
+    [CreateAssetMenu(fileName = "PlayerConfigurableSO", menuName = "Scriptable Objects/PlayerConfigurableSO")]
+    public class PlayerConfigurableSO : ConfigurableSO
     {
         [Header("Player Magnetic Properties")]
         [field: SerializeField] public Player playerIdentifier { get; private set; }
