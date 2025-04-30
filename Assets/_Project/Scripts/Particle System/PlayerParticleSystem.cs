@@ -40,7 +40,7 @@ namespace MagneticMayhem
 
             var mainModule = surfaceCollisionParticleSys.main;
 
-             if(playerMagnetism.pole == MagenticPole.positive)
+             if(playerMagnetism.pole == MagenticPole.South)
              {
                 mainModule.startColor = hexColorBlue;
                 surfaceCollisionParticleSys.Play();

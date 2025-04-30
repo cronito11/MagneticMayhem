@@ -5,6 +5,6 @@ namespace MagneticMayhem
 {
     public class LevelConfigurationManager : MonoBehaviour
     {
-        [SerializeField] LevelConfigurableGO levelConfiguration;
+        [SerializeField] LevelConfigurableSO levelConfiguration;
     }
 }

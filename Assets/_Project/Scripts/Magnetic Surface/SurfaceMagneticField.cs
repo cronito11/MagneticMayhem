@@ -14,7 +14,7 @@ namespace MagneticMayhem
         {
             magneticManager = GetComponentInParent<IMagneticApply>();
             surfaceMagnetism = GetComponentInParent<SurfaceMagnetism>();    
-            magneticManager.SuscribeListener(OnStatusChanged);
+            //magneticManager.SuscribeListener(OnStatusChanged);
         }
 
         private void OnDestroy()
@@ -24,7 +24,7 @@ namespace MagneticMayhem
 
         private void OnStatusChanged(MagnetStatus status)
         {
-            if(surfaceMagnetism.alignment == SurfaceAlignment.Vertical)
+            if(surfaceMagnetism.magneticFeildAlignment == MagneticFieldAlignment.Vertical)
                 magneticFieldArea.size = new Vector2(defaultLength, status.rangeOfMegneticField);
             else
                 magneticFieldArea.size = new Vector2(status.rangeOfMegneticField, defaultLength);

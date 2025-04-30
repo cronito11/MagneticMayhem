@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc63ac5352dd364c9eb8087a145d7d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 15aa3cbe8a659344f9f1641145ba314f, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
-  configurableGOs:
-  - {fileID: 11400000, guid: 007c11929ace3264f9928c4ef414b783, type: 2}
-  - {fileID: 11400000, guid: d916c3662e3bbf74ebcbd057afde4d17, type: 2}
+  configurableSOs:
+  - {fileID: 11400000, guid: 122fb580ce452fb459e283740ff8ea39, type: 2}
+  - {fileID: 11400000, guid: 5b9725ba463eff7498606c99e1fc8b51, type: 2}
+  - {fileID: 11400000, guid: fd2ce53a2fd09054eb4c9ea4dfa74197, type: 2}
+  - {fileID: 11400000, guid: 1dfe2ec07cd49f14c9dae4b880221a9f, type: 2}
+  - {fileID: 11400000, guid: 1bfa6cebf6d4b95458c4ed29983bf6de, type: 2}
+  - {fileID: 11400000, guid: 58bc653edcc0cd147bee587c7df36344, type: 2}

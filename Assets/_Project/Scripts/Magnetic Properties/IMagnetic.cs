@@ -14,9 +14,9 @@ namespace MagneticMayhem
     public enum MagenticPole
     {
         None = 0,
-        positive = 1,
-        negative = 2,
-        black = 3
+        South = 1,
+        North = 2,
+        Black = 3
     }
 
     public interface IMageneticPoleChangeable

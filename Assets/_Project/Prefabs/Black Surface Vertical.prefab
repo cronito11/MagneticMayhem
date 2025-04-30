@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 699916726288852758}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -333,12 +333,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceAnchor: {fileID: 7396460599196146167}
-  currentStatus:
+  currentMagneticStatus:
     pole: 3
     rangeOfMegneticField: 1
-    poleIntensity: 150
+    poleIntensity: 50
   magnetType: 1
-  <alignment>k__BackingField: 1
+  surfaceType: 3
+  levelConfiguration: {fileID: 0}
+  gfxTransform: {fileID: 4878007653207172042}
+  areaEffectTransform: {fileID: 6169612403276267663}
+  <magneticFeildAlignment>k__BackingField: 1
 --- !u!61 &1287718889815840582
 BoxCollider2D:
   m_ObjectHideFlags: 0

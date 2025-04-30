@@ -101,6 +101,12 @@ MonoBehaviour:
     rangeOfMegneticField: 9
     poleIntensity: 70
   magnetType: 0
+  surfaceType: 0
+  levelConfiguration: {fileID: 0}
+  gfxTransform: {fileID: 13648580328457737}
+  areaEffectTransform: {fileID: 6502075497473298552}
+  gfxTransformScaleHoriziontal: {x: 30, y: 0.3, z: 1}
+  gfxTransformScaleVertical: {x: 0.3, y: 30, z: 1}
   <alignment>k__BackingField: 0
 --- !u!61 &2417911146980741046
 BoxCollider2D:
