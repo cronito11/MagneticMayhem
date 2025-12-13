@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Middle
   m_EditorClassIdentifier: 
   <surfaceStatus>k__BackingField:
-    pole: 2
+    pole: 0
     rangeOfMegneticField: 3
     poleIntensity: 70
   <surfaceObjectType>k__BackingField: 1
@@ -21,8 +21,6 @@ MonoBehaviour:
   <magnetismEnabled>k__BackingField: 1
   <gfxTransformScaleHoriziontal>k__BackingField: {x: 30, y: 0.3, z: 1}
   <gfxTransformScaleVertical>k__BackingField: {x: 0.3, y: 30, z: 1}
-  <gfxTransformRotationHorizontal>k__BackingField: {x: 0, y: 0, z: 0}
-  <gfxTransformRotationVertical>k__BackingField: {x: 0, y: 0, z: 90}
   <areaEffectRange>k__BackingField: 3
   <areaEffectOffsetHorizontal>k__BackingField: {x: 0, y: 0, z: 0}
   <areaEffectOffsetVertical>k__BackingField: {x: 0, y: 0, z: 0}

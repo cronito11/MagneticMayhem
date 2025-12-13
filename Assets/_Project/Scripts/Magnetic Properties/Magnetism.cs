@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace MagneticMayhem
 {
-
+    [RequireComponent(typeof(AudioSource))]
     public class Magnetism : MonoBehaviour, IMagneticRecieve, IMagneticApply, IMageneticPoleChangeable, IConfigurable
     {
         private Action<MagnetStatus> OnStatusChanged;
@@ -29,6 +28,12 @@ namespace MagneticMayhem
         public MagenticPole pole => currentStatus.pole;
 
         private PlayerController playerController;
+
+        
+        private AudioSource switchPolarityAudioSource;
+
+        [SerializeField] private AudioClip switchPolarityClip;
+
         #region TestCases
 #if UNITY_EDITOR
         private void OnValidate ()
@@ -46,6 +51,7 @@ namespace MagneticMayhem
         private void Start()
         {
             //configure magnetism
+            switchPolarityAudioSource = GetComponent<AudioSource>();
             Configure();
         }
         public void ApplyMagnetism ()
@@ -115,6 +121,7 @@ namespace MagneticMayhem
 
         public void Switch ()
         {
+            switchPolarityAudioSource.PlayOneShot(switchPolarityClip);
             if (pole.Equals(MagenticPole.South))
                 ChangePole(MagenticPole.North);
             else

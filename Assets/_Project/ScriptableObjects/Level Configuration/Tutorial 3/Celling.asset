@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Celling
   m_EditorClassIdentifier: 
   <surfaceStatus>k__BackingField:
-    pole: 2
+    pole: 0
     rangeOfMegneticField: 9
     poleIntensity: 70
   <surfaceObjectType>k__BackingField: 0
