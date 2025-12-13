@@ -18,11 +18,23 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/Levels/Tutorials/Tutorial 3.unity
     guid: 9d12cbd2e8ec64742ba7586640f46ca5
   - enabled: 1
+    path: Assets/_Project/Scenes/Levels/Tutorials/Tutorial 4.unity
+    guid: bf010f28b4367d44c85092a9633a2fdd
+  - enabled: 1
     path: Assets/_Project/Scenes/Levels/Level 1.unity
     guid: 1a73b85e45c96584baed4ed574fd02f9
   - enabled: 1
     path: Assets/_Project/Scenes/Levels/Level 2.unity
     guid: 651dddc71e8195948b94e56d0e4b1a4e
+  - enabled: 1
+    path: Assets/_Project/Scenes/Levels/Level 3.unity
+    guid: e6a9776a9d9d06849aa4fd45c084a359
+  - enabled: 1
+    path: Assets/_Project/Scenes/Levels/Level 4.unity
+    guid: 4bfc21cc9b235b54ba21b83a9e1be668
+  - enabled: 1
+    path: Assets/_Project/Scenes/Levels/Level 5.unity
+    guid: b877af71c5a2a2e49825ef79eb22dedb
   - enabled: 1
     path: Assets/_Project/Scenes/GameOver.unity
     guid: 63d2a15709dbff44d908a68a54cb83bb

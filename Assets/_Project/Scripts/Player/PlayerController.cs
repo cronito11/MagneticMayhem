@@ -114,6 +114,15 @@ namespace MagneticMayhem
             //}
         }
 
+        private void OnCollisionStay2D(Collision2D collision)
+        {
+            //check if player is grounded
+            if (collision.gameObject.CompareTag("Ground"))
+            {
+                groundCheck = true;
+            }
+        }
+
         private void OnCollisionExit2D(Collision2D other)
         {
             //check if player is grounded and esitting from the ground collider 
